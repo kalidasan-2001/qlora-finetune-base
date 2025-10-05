@@ -1,0 +1,18 @@
+transformers>=4.42.0,<5
+ peft>=0.11.1,<0.12
+ accelerate>=0.33.0,<0.34
+ datasets>=2.19.0,<3
+ huggingface_hub>=0.23.0,<0.24
+-bitsandbytes>=0.43.1,<0.44
+ tyro>=0.8.4,<0.9
+ 
++# Optional (GPU only):
++# bitsandbytes>=0.43.1,<0.44
+
+
+# Torch installation guidance:
+# For CPU-only (CI):
+#   pip install torch --extra-index-url https://download.pytorch.org/whl/cpu
+# For GPU (CUDA 12.1 in Docker):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+# (Leave torch unpinned here so environment decides proper wheel)

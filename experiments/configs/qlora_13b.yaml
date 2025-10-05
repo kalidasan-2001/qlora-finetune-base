@@ -1,0 +1,39 @@
+# qlora-finetune-base/qlora-finetune-base/experiments/configs/qlora_13b.yaml
+
+model:
+  name: "QLoRA-13B"
+  parameters: 13000000000
+  architecture: "transformer"
+
+training:
+  batch_size: 16
+  learning_rate: 5e-5
+  num_epochs: 3
+  gradient_accumulation_steps: 4
+  max_grad_norm: 1.0
+  warmup_steps: 500
+
+data:
+  train_file: "data/processed/train.jsonl"
+  validation_file: "data/processed/val.jsonl"
+  tokenizer: "path/to/tokenizer"
+
+logging:
+  log_dir: "experiments/logs"
+  log_level: "info"
+  save_steps: 1000
+
+evaluation:
+  metrics:
+    - "accuracy"
+    - "f1"
+  eval_steps: 500
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.1
+
+checkpointing:
+  save_total_limit: 3
+  save_strategy: "epoch"

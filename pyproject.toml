@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "qlora-finetune-base"
+version = "0.1.0"
+description = "A QLoRA fine-tuning pipeline for language models."
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/yourusername/qlora-finetune-base"
+repository = "https://github.com/yourusername/qlora-finetune-base"
+keywords = ["QLoRA", "fine-tuning", "language models"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+transformers = "^4.20.0"
+accelerate = "^0.12.0"
+datasets = "^1.18.0"
+peft = "^0.1.0"
+bitsandbytes = "^0.39.0"
+huggingface_hub = "^0.10.0"
+torch = "^1.12.0"
+tyro = "^0.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

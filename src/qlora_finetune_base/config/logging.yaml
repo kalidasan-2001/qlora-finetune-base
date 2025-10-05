@@ -1,0 +1,26 @@
+logging:
+  version: 1.0
+  disable_existing_loggers: false
+  formatters:
+    simple:
+      format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    detailed:
+      format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s - %(filename)s:%(lineno)d'
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: INFO
+      formatter: simple
+    file:
+      class: logging.FileHandler
+      level: DEBUG
+      formatter: detailed
+      filename: 'logs/qlora_finetune.log'
+  loggers:
+    qlora_finetune_base:
+      level: DEBUG
+      handlers: [console, file]
+      propagate: no
+  root:
+    level: WARNING
+    handlers: [console]

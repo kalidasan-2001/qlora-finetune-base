@@ -1,0 +1,38 @@
+default.yaml
+
+model:
+  name: "tiny-llama"
+  version: "1.0"
+
+training:
+  epochs: 3
+  batch_size: 16
+  learning_rate: 5e-5
+  weight_decay: 0.01
+  gradient_accumulation_steps: 1
+  max_grad_norm: 1.0
+
+data:
+  train_file: "data/processed/train.jsonl"
+  eval_file: "data/processed/eval.jsonl"
+  tokenizer_name: "tiny-llama-tokenizer"
+
+logging:
+  level: "INFO"
+  log_file: "logs/training.log"
+
+evaluation:
+  metrics:
+    - "accuracy"
+    - "f1_score"
+
+inference:
+  max_length: 50
+  num_return_sequences: 1
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.1
+
+seed: 42
